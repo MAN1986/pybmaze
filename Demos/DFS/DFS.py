@@ -1,4 +1,4 @@
-from pyMaze import maze,agent,COLOR
+from pyamaze import maze,agent,COLOR
 def DFS(m):
     start=(m.rows,m.cols)
     explored=[start]
