@@ -15,10 +15,10 @@ class Stack:
         return self.items.pop()
 
     def pop_middle(self):
-        if len(self.items) == 0:
-            raise IndexError("pop_middle from an empty stack")
         middle_index = len(self.items) // 2
-        return self.items[middle_index]
+        x=self.items[middle_index]
+        del self.items[middle_index]
+        return x
 
     def is_empty(self):
         return len(self.items) == 0
@@ -67,9 +67,7 @@ def moded_DFS(m, start=None):
             m.markCells.append(currCell)
 
         if blocked == 4:
-            middle_index = len(frontier.items) // 2
-            middle = frontier.items[middle_index]
-            del frontier.items[middle_index]
+            middle= frontier.pop_middle()
             frontier.push(middle)
 
     return dSearch
